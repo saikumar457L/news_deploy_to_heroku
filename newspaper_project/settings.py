@@ -128,7 +128,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
 
 STATIC_ROOT = os.path.join(BASE_DIR,"staticfiles")
 
-STATIC_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 AUTH_USER_MODEL = "users.CustomUser" # The app is created with name users and the model in apps is named with CustomUser
 
