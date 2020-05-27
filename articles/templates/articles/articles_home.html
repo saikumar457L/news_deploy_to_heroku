@@ -1,0 +1,30 @@
+{% extends 'users/base.html' %}
+
+{% block title %} Articls Home {% endblock title %}
+
+{% block content %}
+
+<div class="article-home">
+  <a href="{% url 'article:new_article' %}">+ new article</a>
+  <h5>Availble Articles</h5>
+  {% if object_list %}
+    {%for object in object_list %}
+      <div class="article-head">
+        <a href="{% url 'article:detail' object.pk %}"><h5>{{object.title}}</h5></a>
+      </div>
+
+      <div class="article-body">
+        <p>{{object.body}}</p>
+      </div>
+
+
+    {% endfor %}
+
+  {% else %}
+    <p>No articles <a href="{% url 'article:new_article' %}">+add article</a></p>
+
+  {% endif %}
+</div>
+
+
+{% endblock content %}

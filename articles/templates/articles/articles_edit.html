@@ -1,0 +1,15 @@
+{% extends 'users/base.html' %}
+
+{% block title %}Editing {{object.title}} {% endblock title %}
+
+{% block content %}
+<div class="article-edit">
+  <h3>Edit {{object.title}}</h3>
+  <form class="" action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" name="button">Update</button>
+  </form>
+</div>
+
+{% endblock content %}
